@@ -138,6 +138,6 @@ describe('can retrieve all tuits with REST API', () => {
 
     const tuits = await findAllTuits();
     expect(tuits.length).toBeGreaterThanOrEqual(2);
-    
+    //since we know creating tuit and finding tuit work (tests are green), chekcing if the length of the tuits returned is enough logical correctness
   })
 });
