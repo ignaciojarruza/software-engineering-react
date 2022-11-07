@@ -5,6 +5,7 @@ const BASE_URL = "http://localhost:4000/api";
 const LOGIN_API = `${BASE_URL}/login`;
 const USERS_API = `${BASE_URL}/users`;
 const TUITS_API = `${BASE_URL}/api/tuits`;
+const CREATETUITS = `${BASE_URL}/api/users`;
 
 export const createUser = (user) =>
   axios.post(`${USERS_API}`, user)
@@ -36,8 +37,8 @@ const service = {
 
 export default service;
 
-export const createTuit = (tuit) =>
-  axios.post(`${TUITS_API}`, tuit)
+/* export const createTuit = (tuit, uid) =>
+  axios.post(`${CREATETUITS}/${uid}/tuits`, tuit)
     .then(response => response.data);
 
 export const deleteTuit = (tid) =>
@@ -50,4 +51,4 @@ export const findTuitById = (tid) =>
 
 export const findAllTuits = () =>
   axios.get(`${TUITS_API}`)
-    .then(response => response.data);
+    .then(response => response.data); */

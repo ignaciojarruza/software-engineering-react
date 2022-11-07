@@ -1,7 +1,7 @@
 import axios from "axios";
 const BASE_URL = "https://tuitera2.herokuapp.com";
 const TUITS_API = `${BASE_URL}/api/tuits`;
-const USERS_API = `${BASE_URL}/users`;
+const USERS_API = `${BASE_URL}/api/users`;
 
 export const findAllTuits = () =>
   axios.get(TUITS_API)
