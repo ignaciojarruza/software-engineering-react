@@ -76,6 +76,8 @@ import Tuits from "../tuits";
 export default Profile; */
 
 import * as service from "../../services/auth-service"
+import MyTuits from "../profile/my-tuits";
+import {Routes,Route} from 'react-router';
 const Profile = () => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState({});
@@ -97,6 +99,9 @@ const Profile = () => {
       <h6>@{profile.username}</h6>
       <button onClick={logout}>
         Logout</button>
+      <Routes>
+        <Route path="/mytuits" element={<MyTuits/>}/>
+      </Routes>
     </div>
   );
 };

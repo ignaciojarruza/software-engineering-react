@@ -12,7 +12,7 @@ const Home = () => {
   const userId = uid;
   const findTuits = () => {
     if(uid) {
-      return service.findTuitByUser(uid)
+      return service.findTuitsByUser(uid)
         .then(tuits => setTuits(tuits))
     } else {
       return service.findAllTuits()
@@ -25,7 +25,7 @@ const Home = () => {
     return () => {isMounted = false;}
   }, []);
   const createTuit = () =>
-      service.createTuit(userId, {tuit})
+      service.createTuitByUser(userId, {tuit})
           .then(findTuits)
   const deleteTuit = (tid) =>
       service.deleteTuit(tid)
