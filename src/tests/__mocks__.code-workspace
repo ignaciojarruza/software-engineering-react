@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../__mocks__"
+		},
+		{
+			"path": "../../node_modules"
+		},
+		{
+			"path": "../../public"
+		},
+		{
+			"path": ".."
+		}
+	]
+}
