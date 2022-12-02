@@ -16,6 +16,7 @@ import {Login} from "../profile/login";
 import Movies from "../movies";
 import MovieDetails from "../movies/details";
 import Signup from "../profile/signup";
+import MyTuits from "../profile/my-tuits";
 
 function Tuiter () {
   return(
@@ -44,6 +45,7 @@ function Tuiter () {
               <Route path="/movies" element={<Movies/>}/>
               <Route path="/movies/:imdbID" element={<MovieDetails/>}/>
               <Route path="/more" element={<More/>}/>
+              <Route path="/mytuits" element={<MyTuits/>}/>
             </Routes>
           </div>
           <div className="ttr-right-column">

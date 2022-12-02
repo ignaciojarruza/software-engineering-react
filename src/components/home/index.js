@@ -6,27 +6,35 @@ import {useLocation, useParams} from "react-router-dom";
 
 const Home = () => {
   const location = useLocation();
-  const {uid} = useParams();
+  const userId = useParams();
   const [tuits, setTuits] = useState([]);
   const [tuit, setTuit] = useState('');
-  const userId = uid;
+  const [uid, setUid] = useState('');
+  //const userId = uid;
+  //need to remove my tuits to render all tuits
   const findTuits = () => {
-    if(uid) {
+    /* if(userId) {
       return service.findTuitsByUser(uid)
         .then(tuits => setTuits(tuits))
     } else {
       return service.findAllTuits()
         .then(tuits => setTuits(tuits))
-    }
+    } */
+    return service.findAllTuits().then(tuits => setTuits(tuits))
   }
   useEffect(() => {
+    setUid(userId);
     let isMounted = true;
     findTuits()
     return () => {isMounted = false;}
   }, []);
-  const createTuit = () =>
-      service.createTuitByUser(userId, {tuit})
+  const createTuit = () => {
+    console.log(uid.uid);
+    const tuitFormatted = {tuit: tuit, postedBy: uid.uid, postedOn: Date.now()};
+    service.createTuit(uid.uid, tuitFormatted)
           .then(findTuits)
+  }
+      
   const deleteTuit = (tid) =>
       service.deleteTuit(tid)
           .then(findTuits)
