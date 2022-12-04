@@ -78,6 +78,8 @@ export default Profile; */
 import * as service from "../../services/auth-service"
 import MyTuits from "../profile/my-tuits";
 import {Routes,Route} from 'react-router';
+import MyLikes from "./my-likes";
+
 const Profile = () => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState({});
@@ -99,8 +101,12 @@ const Profile = () => {
       <h6>@{profile.username}</h6>
       <button onClick={logout}>
         Logout</button>
+        <Link to="/profile/mylikes">
+        Likes</Link>
       <Routes>
         <Route path="/mytuits" element={<MyTuits/>}/>
+        <Route path="/mylikes"
+               element={<MyLikes/>}/>
       </Routes>
     </div>
   );
